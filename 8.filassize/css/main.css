@@ -1,0 +1,48 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	grid-template-rows: repeat(2, 200px);
+	grid-gap: 5px;
+	height: 100vh;
+}
+.item {
+	background-color: blanchedalmond;
+	padding: 10px;
+	border: 1px solid red;
+}
+.item:nth-of-type(1) {
+	grid-column-start: 1;
+	grid-column-end: span 3; /*Se le indica en que linea va a terminar no en que columna*/
+	grid-row-start: 1;
+	grid-row-end: span 2;
+}
+
+.item:nth-of-type(2) {
+	grid-column-start: 4;
+	grid-column-end: span 2; /*Se le indica en que linea va a terminar no en que columna*/
+	grid-row-start: 1;
+	grid-row-end: span 2;
+}
+
+.item:nth-of-type(3) {
+	grid-column-start: 6;
+	grid-column-end: span 2; /*Se le indica en que linea va a terminar no en que columna*/
+}
+
+.item:nth-of-type(8) {
+	grid-column: 2 / 4; /*para indicar el inicio y el fin de un item en una sola linea*/
+}
+
+.item:nth-of-type(7) {
+	grid-column: 1 / span 2; /*span me ayuda a indicarle la cantidad de espacios que quiero ocupar*/
+}
+
+.item:nth-of-type(9) {
+	grid-column: 1 / -1; /*para indicarle dinamicamente que ocupe todo el espacio disponible*/
+}
