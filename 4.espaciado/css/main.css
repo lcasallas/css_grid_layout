@@ -1,0 +1,33 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: 25% 200px 40%; /*se especifica el tamaño y la cantidad de columnas, se puede indicar en porcentaje el tamaño o combinado.*/
+	grid-template-rows: 300px 150px;
+	grid-template: 60px 150px 80px / 50% 20% 30%; /*Me permite escribir las dos instrucciones en una sola, en el siguiente orden: filas / columnas*/
+	grid-column-gap: 30px; /*Espaciado dentro de los items a las columnas*/
+	grid-row-gap: 25px; /*Epaciado dentro de los items a las filas.*/
+	grid-gap: 25px 30px; /*Me permite indicar las 2 propiedades anteriores en una sola, en orden filas columnas*/
+}
+.item {
+	background-color: blanchedalmond;
+	padding: 10px;
+	border: 1px solid red;
+}
+
+.item:nth-of-type(4) {
+	background-color: cadetblue;
+	overflow: auto;
+	/* display: subgrid; Cuando este disponible, lo que hace es heredar la configuracion de la grid padre.*/
+	/* display: inline-grid; Cuando este disponible, su efecto seria generar un grid en linea.*/
+	display: grid;
+	grid-template: 80px 80px 80px / 90px 90px 90px;
+}
+
+.item .item {
+	background-color: darkkhaki;
+}
